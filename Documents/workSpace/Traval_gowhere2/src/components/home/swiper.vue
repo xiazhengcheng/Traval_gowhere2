@@ -11,7 +11,7 @@ import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
   name: "HomeSwiper",
   props: {
-    list: Array
+    list: Array,
   },
   data() {
     return {
@@ -24,6 +24,7 @@ export default {
         paginationClickable: true,
         mousewheelControl: true,
         observeParents: true,
+        speed:2000,
         pagination: {
           el: ".swiper-pagination",
           bulletClass: "my-bullet",
@@ -38,17 +39,24 @@ export default {
     swiperSlide
   },
   mounted() {
-    var that = this;
-    console.log("数组：" + this.list);
-    var swiperList = this.list;
-    setInterval(() => {
-      if (swiperList.length < 4) {
-        that.list.push(swiperList.length + 1);
-      } else {
-        swiperList = [];
-        swiperList.push(that.list[0]);
-      }
-    }, 3000);
+  //   var that = this;
+  //   console.log("数组：" + this.list);
+  //   var swiperList = that.list;
+  //   setInterval(() => {
+
+  //     for (let index = 0; index < swiperList.length; index++) {
+  //       const element = array[index];
+  //       if (index >=0 && index < 4) {
+
+  //       }
+  //     }
+  //     if ( swiperList.length < 4 && swiperList.length >= 0) {
+
+  //     } else {
+  //       swiperList = [];
+  //       swiperList.push(that.list[0]);
+  //     }
+  //   }, 3000);
   }
 };
 </script>
