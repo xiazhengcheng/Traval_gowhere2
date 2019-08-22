@@ -26,7 +26,8 @@ export default {
 <style lang='stylus' scoped>
 .title 
     margin-top: 10px;
-    padding: 10px 0 10px 30px;
+    padding: 10px 0 10px 0;
+    text-indent: .2rem;
     text-align: left;
     background-color: #f6f6f6;
     font-size: 12px;
@@ -47,6 +48,7 @@ export default {
 
 .item-desc {
     font-size: 14px;
+    padding-top: 5px;
     color: darkgray;
 }
 </style>

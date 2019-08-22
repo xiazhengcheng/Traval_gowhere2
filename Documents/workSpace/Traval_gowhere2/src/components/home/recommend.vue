@@ -27,7 +27,8 @@ export default {
 
     .title 
       width : 100%
-      padding: 10px 0 10px 30px;
+      text-indent: .2rem
+      padding:10px 0 10px 0;
       text-align: left;
       background-color:#f6f6f6;
       font-size: 12px;

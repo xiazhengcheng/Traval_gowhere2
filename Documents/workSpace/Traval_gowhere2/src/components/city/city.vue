@@ -4,7 +4,7 @@
         </city-header>
         <city-search :cities="cities"></city-search>        
         <city-list :cities="cities" :hot="hotCities" :letter="letter" class="clityList"></city-list>
-        <city-alphabet :cities="cities" @change='handleLetterChange' class="cityAlphabet"></city-alphabet>
+        <!-- <city-alphabet :cities="cities" @change='handleLetterChange' class="cityAlphabet"></city-alphabet> -->
 
     </div>  
 </template>
@@ -57,13 +57,7 @@ export default {
 }
 </script>
 <style>
-    .cityList {
-        display: inline;
-        background-color: red;
-    }
-    .cityAlphabet {
-        float: left;
-    }
+
 </style>
 
 

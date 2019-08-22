@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        <div class="areaHot">
+        <div class="area">
             <div class="title border-topbottom">热门城市</div>
             <div class="button-list">
                 <div class="button-wrapper">
@@ -79,9 +79,11 @@ export default {
         }
 }
 </script>
-<style>
+<style lang='stylus' scoped>
+@import '../../assets/styles/varibles.styl';
+
     .wrapper {
-        width: 320px;
+        width: 100%;
         position: absolute;
         top: 74px;
         overflow: hidden;
@@ -89,7 +91,7 @@ export default {
     }
     .button {
         text-align: left;
-        width: 320px;
+        width: 100%;
         height: 30px;
         padding-left: 10px;
         line-height: 30px;
@@ -97,27 +99,22 @@ export default {
         /* background-color: rebeccapurple; */
     }
     .sepDiv {
-        width: 320px;
+        width: 100%;
         height: 30px;
         background-color: #f8f8f8;
         line-height: 30px;
         text-align: left;
     }
     .border-bottom {
-        width: 320px;
+        width: 100%;
         height: 30px;
         line-height: 30px;
         text-align: left;
         font-size: 12px;
     }
     .line {
-        width: 320px;
+        width: 100%;
         height: 0.5px;
         background-color: #f8f8f8;
-    }
-    .areaHot {
-       flex: auto; 
-       flex-direction: row;
-       flex-wrap: wrap;
     }
 </style>
