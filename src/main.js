@@ -5,6 +5,8 @@ import App from './App'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import router from './router'
 import '@/../node_modules/swiper/dist/css/swiper.css'
+import '../src/assets/styles/reset.css'
+import '../src/assets/styles/iconfont.css'
 
 
 

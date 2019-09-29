@@ -1,60 +1,43 @@
 <template>
     <div class="head">
-        <div class="header-left">
-            <div class="back-icon" @click='navClick'></div>
-        </div>
-        <div class="nav_title">
-            城市列表
-        </div>
-    </div>
+    城市选择
+    <router-link to="./home">
+      <div class="iconfont header-back">&#xe624;</div>
+    </router-link>
+  </div>
 </template>
 <script>
 export default {
-    name:'CityHeader',
-    methods: {
-        navClick() {
-            console.log(this.$router);
-            this.$router.go(-1);
-        }
+  name: "CityHeader",
+  methods: {
+    navClick() {
+      console.log(this.$router);
+      this.$router.go(-1);
     }
-}
+  }
+};
 </script>
-<style>
-    .div,p{
-        padding: 0;
-        margin: 0;
-    }
+<style lang='stylus' scoped>
+@import '~@/assets/styles/varibles.styl';
 
-    .header-left {
-        width:44px;
-        height:44px;
-        line-height:40px;
-        color:white;
-        font-size:10px;
-        float:left;
+.head 
+    position: relative;
+    overflow: hidden;
+    height: $headerHeight;
+    line-height: $headerHeight;
+    text-align: center;
+    color: #fff;
+    background: $bgColor;
+    font-size: 0.32rem;
 
-        
-    }
-    .head {
-        width: 320px;
-        height: 44px;
-        /* position: fixed; */
-    }
-    .back-icon {
-        height:19px;
-        width:11px;
-        margin:12px; 
-        background: url('../../assets/imageData/nav_back.png') no-repeat;
-    }
-    .nav_title {
-        width: 260px;
-        height: 44px;
-        color: white;
-        font-size: 16px;
-        float: left;
-        /* background-color: blue; */
-        line-height: 44px;
-    }
+    .header-back 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0.64rem;
+        text-align: center;
+        font-size: 0.4rem;
+        color: #fff;
 </style>
 
 

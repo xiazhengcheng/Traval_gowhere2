@@ -23,7 +23,8 @@ export default {
             swiperList:[],
             iconList:[],
             recommendList:[],
-            weekendList:[]
+            weekendList:[],
+
         }
     },
     created(){
@@ -71,14 +72,14 @@ export default {
                 this.lastCity = this.city
                 this.getHomeInfo()
             }
-        }
+        },
     }
 }
 </script>
 <style>
 
     .home {
-        width: 320px;
+        width: 100%;
     }
 </style>
 

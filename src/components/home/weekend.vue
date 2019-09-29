@@ -16,39 +16,41 @@
 </template>
 <script>
 export default {
-    name:'HomeWeekend',
-    props:{
-        list:Array
-    }
-}
+  name: "HomeWeekend",
+  props: {
+    list: Array
+  }
+};
 </script>
 
-<style>
-    div,ul,li,img,p{
-        padding: 0;
-        margin: 0;
-    }
-    .title {
-        margin-top: 10px;
-        padding: 10px 0 10px 10px;
-        text-align: left;
-        background-color:#f6f6f6;
-        font-size: 12px;
-        width: 310px;
-    }
-    .item-img-wrapper {
-        margin-top: 10px;
-    }
-    .item-img {
-        width: 320px;
-    }
-    .item-title {
-        font-size: 14px;
-    }
-    .item-desc {
-        font-size: 12px;
-        color: darkgray;
-    }
+<style lang='stylus' scoped>
+.title 
+    margin-top: 10px;
+    padding: 10px 0 10px 0;
+    text-indent: .2rem;
+    text-align: left;
+    background-color: #f6f6f6;
+    font-size: 12px;
+    width: 100%;
+
+.item-img-wrapper {
+    margin-top: 10px;
+}
+
+.item-info {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.item-img {
+    width: 100%;
+}
+
+.item-desc {
+    font-size: 14px;
+    padding-top: 5px;
+    color: darkgray;
+}
 </style>
 
 

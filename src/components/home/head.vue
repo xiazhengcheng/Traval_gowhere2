@@ -17,85 +17,64 @@
 </template>
 
 <script>
-
+// import { logInfo } from "./test";
 export default {
-    name: "HomeHeader",
-    props:{
-        city:String
-    },
-    data () {
-        return {
+  name: "HomeHeader",
+  props: {
+    city: String
+  },
+  data() {
+    return {};
+  },
+  mounted() {
+    // logInfo();
+  }
+};
+</script>
 
+<style lang='stylus' scoped>
+@import '../../assets/styles/varibles.styl';
+
+.head {
+    display: flex;
+    line-height: $headerHeight;
+    background-color: $bgColor;
+    color: #fff;
+
+    .header-left {
+        width: 0.64rem;
+        float: left;
+
+        .back-icon {
+            text-align: center;
+            font-size: 0.4rem;
+            background: url('../../assets/imageData/nav_back.png') no-repeat;
+        }
+    }
+
+    .header-input {
+        flex: 1;
+        height: 0.64rem;
+        line-height: 0.64rem;
+        margin-top: 0.12rem;
+        margin-left: 0.2rem;
+        padding-left: 0.2rem;
+        background: #fff;
+        border-radius: 0.1rem;
+        color: #ccc;
+    }
+
+    .header-right {
+        min-width: 1.04rem;
+        padding: 0 0.1rem;
+        float: right;
+        text-align: center;
+        color: #fff;
+
+        .arrow-icon {
+            margin-left: -0.04rem;
+            font-size: 0.24rem;
         }
     }
 }
-</script>
-
-<style>
-    h,p,a {
-        margin:0;
-        padding:0;
-    }
-    .head {
-        background-color: #ff6623;
-        width: 320px;
-        height:44px;
-        /* position: fixed; */
-    }
-    .header-left {
-        width:44px;
-        height:44px;
-        line-height:40px;
-        color:white;
-        font-size:10px;
-        float:left;
-
-        
-    }
-    .back-icon {
-        height:19px;
-        width:11px;
-        margin:12px; 
-        background: url('../../assets/imageData/nav_back.png') no-repeat;
-    }
-    .header-input {
-        float:left;
-        background-color:white;
-        width:200px;
-        height:30px;
-        margin-top:6px; 
-        font-size:10px; 
-        text-align:left;
-        line-height:30px;
-        color:darkGray;
-        background-color:#f9f9f9;
-    }
-    input {
-        width:167px;
-        height:28px;
-        float:right;
-        border:0 white solid;
-
-    }
-    .iconfont {
-        font-size:10px;
-        display:block;
-        float:left;
-        width:12px;
-        height:12px;
-        margin:8px 3px 0 5px;
-        background:url('../../assets/imageData/nav_search.png')
-    }
-    .header-right {
-        float:left;
-        color:white;
-        height:30px;
-        margin-top:6px;
-        font-size:10px;
-        line-height:30px;
-
-    }
-    .arrow-icon {
-        margin-left: 20px;
-    }
 </style>

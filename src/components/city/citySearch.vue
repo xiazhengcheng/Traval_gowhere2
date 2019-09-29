@@ -1,30 +1,38 @@
 <template>
     <div>
         <div class="search">
-            <input v-model="keyword" class="search-input" type="text" placeholder="请输入城市名和拼音">    
+            <input class="search-input" type="text" placeholder="请输入城市名和拼音">  
+            <!-- <div class="cancel" @click="cancelClick">取消</div>   -->
         </div>    
     </div>
 </template>
 <script>
 export default {
-    name:'CitySearch',
-}
+  name: "CitySearch",
+//   data() {
+//     return null;
+//   },
+  methods: {
+  }
+};
 </script>
-<style>
-    .search {
-        width: 320px;
-        height: 40px;
-        /* background-color: #f8f8f8; */
-    }
-    .search-input {
-        margin: 0 10px 5px 10px;
+<style lang='stylus' scoped>
+@import '~@/assets/styles/varibles.styl'
+.search 
+    height: .8rem;
+    display: flex;
+    position :relative;
+    display: -webkit-flex;
+    background-color $bgColor
+    .search-input 
+        margin: 0 auto;
+        margin-top: 5px;
         height: 30px;
-        width: 300px;
+        width: 100%;
+        margin  0 .2rem 0 .2rem
         text-align: center;
         border-radius: 5px;
-        background-color: #f8f8f8;
-
-    }
+        background-color: #fff;
 </style>
 
 
