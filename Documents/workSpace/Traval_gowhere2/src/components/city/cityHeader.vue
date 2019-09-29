@@ -18,10 +18,10 @@ export default {
 };
 </script>
 <style lang='stylus' scoped>
-@import '../../assets/styles/varibles.styl';
+@import '~@/assets/styles/varibles.styl';
 
-.head {
-    position: absolute;
+.head 
+    position: relative;
     overflow: hidden;
     height: $headerHeight;
     line-height: $headerHeight;
@@ -30,7 +30,7 @@ export default {
     background: $bgColor;
     font-size: 0.32rem;
 
-    .header-back {
+    .header-back 
         position: absolute;
         top: 0;
         left: 0;
@@ -38,8 +38,6 @@ export default {
         text-align: center;
         font-size: 0.4rem;
         color: #fff;
-    }
-}
 </style>
 
 

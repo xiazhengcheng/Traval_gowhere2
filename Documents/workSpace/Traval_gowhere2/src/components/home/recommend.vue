@@ -24,7 +24,7 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
-
+    @import '~@/assets/styles/mixins.styl'
     .title 
       width : 100%
       text-indent: .2rem
@@ -42,14 +42,15 @@ export default {
         border-bottom: 0.5px lightgray solid
         .item-img 
           float: left
-          width: 80px
+          width: 25%
           height: 80px
-          margin-left: 10px
+          width :80px
+          margin-left: 2.5%
           
         .item-info 
-          float: left
-          height: 80px
-          margin-left: 10px
+          float: left  
+          width:65%
+          padding-left :10px
           .item-title 
             text-align: left
             font-size: 14px
@@ -58,12 +59,12 @@ export default {
             float: left
             background-color: #ff6623
             border-radius: 5px
+            margin:5px 0 5px 0
           .item-desc
-            width: 230px
             text-align: left
             font-size: 12px
-            height: 30px
-            line-height: 30px
+            margin-top :10px
+            word-wrap: break-word
             color: darkgray
 </style>
 

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <p>父组件传入子组件的值： {{name}}</p>
+        <child :msg.sync='name'></child>//通过:msg.sync绑定,它实质上是@update:msg='val=>valueSync=val',的语法糖，因此可不用绑定
+    </div>
+
+    <script>
+
+        Vue.component('Child', {
+            template: "<div class='child'>输入框：<input type='text' :value='msg' @input='handleInput'/></div>",
+            props: ['msg'],
+            methods: {
+                handleInput(event) {
+                    this.$emit('update:msg',event.target.value)
+                } 
+            }
+        })
+
+        var app = new Vue({
+            el: "#app",
+            data: {
+                name: 'Eathon'
+            },
+        })
+
+    </script>
+</body>
+
+</html>
