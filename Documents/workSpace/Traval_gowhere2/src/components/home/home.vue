@@ -31,8 +31,7 @@ export default {
         console.log("-----create");
     },
     mounted () {
-            console.log("======2");
-        // this.lastCity = this.city
+        console.log("======2");
         this.getHomeInfo() 
         },
     components: {
