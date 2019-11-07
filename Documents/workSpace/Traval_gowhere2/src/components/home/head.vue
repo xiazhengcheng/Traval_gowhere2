@@ -7,7 +7,7 @@
             <span class="iconfont"></span>
             <input type="text">
         </div>
-        <router-link :to="{name:'city',params:{city:this.currentCity}}">
+        <router-link :to="{name:'city',params:{city:city}}">
             <div class="header-right">
                 <span class='arrow-icon'>&#xe64a;</span>
                 {{this.city}}
@@ -27,8 +27,7 @@ export default {
     return {};
   },
   computed: {
-    ...mapState(["city"])
-
+      ...mapState(['city'])
   }
 };
 </script>
