@@ -7,27 +7,28 @@
             <span class="iconfont"></span>
             <input type="text">
         </div>
-        <router-link :to="{name:'city',params:{city:city}}">
+        <router-link :to="{name:'city',params:{city:this.currentCity}}">
             <div class="header-right">
                 <span class='arrow-icon'>&#xe64a;</span>
-                {{city}}
+                {{this.city}}
             </div>
         </router-link>
     </div>
 </template>
 
 <script>
-// import { logInfo } from "./test";
+import { mapState } from "vuex";
 export default {
   name: "HomeHeader",
   props: {
-    city: String
+    currentCity: String
   },
   data() {
     return {};
   },
-  mounted() {
-    // logInfo();
+  computed: {
+    ...mapState(["city"])
+
   }
 };
 </script>

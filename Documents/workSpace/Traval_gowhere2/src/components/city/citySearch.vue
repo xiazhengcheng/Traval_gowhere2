@@ -2,16 +2,17 @@
     <div>
         <div class="search">
             <input class="search-input" type="text" placeholder="请输入城市名和拼音">  
-            <!-- <div class="cancel" @click="cancelClick">取消</div>   -->
         </div>    
     </div>
 </template>
 <script>
 export default {
   name: "CitySearch",
-//   data() {
-//     return null;
-//   },
+  data() {
+      return {
+          city:'123'
+      };
+  },
   methods: {
   }
 };
