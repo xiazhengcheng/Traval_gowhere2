@@ -27,10 +27,10 @@ export default {
 
         }
     },
-    created(){
+    created() {
         console.log("-----create");
     },
-    mounted () {
+    mounted() {
         console.log("======2");
         this.getHomeInfo() 
         },
@@ -40,7 +40,6 @@ export default {
         HomeSwiper,
         HomeRecommend,
         HomeWeekend
-
     },
     computed: {
         ...mapState(['city'])
@@ -62,10 +61,7 @@ export default {
             this.weekendList = data.weekendList
             this.lastCity = "上海"
             }
-
-            // console.log("=====",res);
         },
-        
         activated () {
             if(this.lastCity !== this.city) {
                 this.lastCity = this.city
