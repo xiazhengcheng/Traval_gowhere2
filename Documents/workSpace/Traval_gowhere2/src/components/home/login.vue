@@ -12,6 +12,7 @@
 
 </template>
 <script>
+// import Cookies from 'js-cookie'
 export default {
   name: "login",
   data() {
@@ -22,8 +23,10 @@ export default {
   methods: {
     loginClick() {
       if (this.$refs.userText.value === "xiazhengcheng" && this.$refs.userPwd.value === "123") {
-        this.$router.push("/home");
-            alert(this.$refs.userText.value + "成功！");
+          alert(this.$refs.userText.value + "成功！");
+          this.$router.push("/home");
+
+          // this.$store.commit('SET_TASK',this.$refs.userText.value);
       } else {
             alert('请输入正确的用户名、密码')
       }
