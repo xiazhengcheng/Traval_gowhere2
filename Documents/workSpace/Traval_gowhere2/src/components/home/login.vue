@@ -12,7 +12,7 @@
 
 </template>
 <script>
-// import Cookies from 'js-cookie'
+import Cookies from 'js-cookie'
 export default {
   name: "login",
   data() {
@@ -26,7 +26,15 @@ export default {
           alert(this.$refs.userText.value + "成功！");
           this.$router.push("/home");
 
-          // this.$store.commit('SET_TASK',this.$refs.userText.value);
+          var userInfo = { userName:this.$refs.userText.value, age: 12 }
+          Cookies.set('userInfo',JSON.stringify(userInfo))
+
+          this.$store.commit('SET_TASK',userInfo);
+          console.log('userName:' + this.$refs.userText.value)
+          console.log(this.$store)
+          console.log('store', this.$store.getters.user.userName)
+          console.log('store', this.$store.getters.user.age)
+
       } else {
             alert('请输入正确的用户名、密码')
       }

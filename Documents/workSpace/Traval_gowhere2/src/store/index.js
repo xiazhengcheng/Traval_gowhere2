@@ -1,13 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import getter from './getter'
-import task from './task'
+import getters from './getters'
+import user from './user'
+import city from './city'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   modules: {
-    task
-  }, getter
+    user,
+    city,
+  }, getters
 })
 export default store

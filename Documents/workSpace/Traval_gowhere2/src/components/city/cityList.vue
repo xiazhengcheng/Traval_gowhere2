@@ -5,7 +5,7 @@
                 <div class="title border-topbottom">当前城市</div>
                 <div class="button-list">
                     <div class="button-wrapper">
-                        <div class="button">{{this.city}}</div>
+                        <div class="button" @click="handleCityClick(city)">{{city}}</div>
                     </div>
                 </div>
             </div>
@@ -32,37 +32,44 @@
 <script>
 import Bscroll from "better-scroll";
 import { mapState, mapMutations } from "vuex";
+import Cookies from "js-cookie";
 export default {
   name: "CityList",
   props: {
     hot: Array,
     cities: Object,
-    letter: String,
+    letter: String
   },
-  data () {
-      return {
-          scroll: Bscroll
-      }
+  data() {
+    return {
+      scroll: Bscroll,
+      city: ""
+    };
   },
   mounted() {
-      setTimeout(()=>{
-        this.scroll = new Bscroll(this.$refs.wrapper);
-        console.log('scroll:' + this.scroll)  
-      },100)
-    
+    this.city = this.$store.getters.city.cityName;
+    setTimeout(() => {
+      this.scroll = new Bscroll(this.$refs.wrapper);
+      console.log("scroll:" + this.scroll);
+    }, 100);
   },
   methods: {
     handleCityClick(city) {
-      this.changeCity(city);
-      console.log(city)
-    //   this.$router.push("/home");
-    this.$router.go(-1);
-    },
-    ...mapMutations(["changeCity"])
+      console.log("城市点击");
+      this.city = city;
+      var cityInfo = { cityName: city };
+      this.$store.commit("SET_CITY", cityInfo);
+
+      Cookies.set("city", cityInfo);
+
+      // this.changeCity(city);
+      this.$router.go("-1");
+    }
+    // ...mapMutations(["changeCity"])
   },
-  computed: {
-      ...mapState(['city'])
-  },
+  //   computed: {
+  //       ...mapState(['city'])
+  //   },
   watch: {
     letter() {
       if (this.letter) {
@@ -75,46 +82,68 @@ export default {
 </script>
 <style lang='stylus' scoped>
 @import '~@/assets/styles/varibles.styl';
-.border-topbottom
-    &:before
-        border-color #777
-    &:after
-        border-color #777
-.border-topbottom
-    &:after
-        border-color #777
-.list
-    position absolute
-    overflow hidden
-    top 1.58rem
-    left 0
-    right 0
-    bottom 0
-    .title 
-        line-height .54rem
-        background-color #eee
-        padding-left .2rem
-        color #666
-        font-size .26rem
-        text-align left 
-    .button-list
-        padding 0 .6rem .1rem .1rem
-        overflow hidden
-        .button-wrapper
-            width 33.33%
-            float left
-            .button
-                text-align center
-                padding .1rem 0
-                margin .1rem
-                border .02rem solid #eee
-    .item-list
-        padding 0 .6rem 0 .1rem
-        .item-wrapper
-            height .6rem
-            line-height .6rem
-            text-align left  
-            border-bottom .01rem solid #eee
-            font-size .2rem
-            padding-left .1rem
+
+.border-topbottom {
+    &:before {
+        border-color: #777;
+    }
+
+    &:after {
+        border-color: #777;
+    }
+}
+
+.border-topbottom {
+    &:after {
+        border-color: #777;
+    }
+}
+
+.list {
+    position: absolute;
+    overflow: hidden;
+    top: 1.58rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    .title {
+        line-height: 0.54rem;
+        background-color: #eee;
+        padding-left: 0.2rem;
+        color: #666;
+        font-size: 0.26rem;
+        text-align: left;
+    }
+
+    .button-list {
+        padding: 0 0.6rem 0.1rem 0.1rem;
+        overflow: hidden;
+
+        .button-wrapper {
+            width: 33.33%;
+            float: left;
+
+            .button {
+                text-align: center;
+                padding: 0.1rem 0;
+                margin: 0.1rem;
+                border: 0.02rem solid #eee;
+            }
+        }
+    }
+
+    .item-list {
+        padding: 0 0.6rem 0 0.1rem;
+
+        .item-wrapper {
+            height: 0.6rem;
+            line-height: 0.6rem;
+            text-align: left;
+            border-bottom: 0.01rem solid #eee;
+            font-size: 0.2rem;
+            padding-left: 0.1rem;
+        }
+    }
+}
 </style>

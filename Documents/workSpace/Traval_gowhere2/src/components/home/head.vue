@@ -7,10 +7,10 @@
             <span class="iconfont"></span>
             <input type="text">
         </div>
-        <router-link :to="{name:'city',params:{city:city}}">
+        <router-link :to="{name:'city'}">
             <div class="header-right">
                 <span class='arrow-icon'>&#xe64a;</span>
-                {{this.city}}
+                {{city}}
             </div>
         </router-link>
     </div>
@@ -21,13 +21,18 @@ import { mapState } from "vuex";
 export default {
   name: "HomeHeader",
   props: {
-    currentCity: String
+    city: {
+      type: String
+    }
   },
   data() {
-    return {};
+    return {
+      currentCity: ""
+    };
   },
-  computed: {
-      ...mapState(['city'])
+  created() {},
+  mounted() {
+    this.currentCity = this.city;
   }
 };
 </script>
